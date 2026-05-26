@@ -1,0 +1,25 @@
+Hooks
+It is used to perform the functions in the function-based component. Which I can perform in the class-based component.
+
+1. hooks are always start with "use"
+		
+	ex:- useState, useRef, useDistach, etc...
+2. Hooks will be declared at the top level.
+
+1. useState().
+
+	The return type of the useState is an array.
+
+
+	let [initialValue,function] = useState(value)
+
+
+
+
+
+
+
+
+
+
+
