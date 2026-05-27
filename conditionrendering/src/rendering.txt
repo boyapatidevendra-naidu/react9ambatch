@@ -1,0 +1,16 @@
+1. if-else
+
+    syntax:- if(condition){
+         return //true block
+    }
+    else{
+        return // false block
+    }
+
+2. Ternary Operator
+
+        syntax: condition ? true block : false block
+
+3. Short Circuit Method
+
+    syntax:- condition && data;

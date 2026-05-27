@@ -1,16 +1,16 @@
 // import React from "react";
 // import CounterWithClass from "./components/CounterWithClass";
-// import CounterWithFunction from "./components/CounterWithFunction";
-import Parent from "./components/counter/Parent";
+import CounterWithFunction from "./components/CounterWithFunction";
+// import Parent from "./components/counter/Parent";
 
 const App = () => {
   return (
     <div>
-      {/* <CounterWithClass />
+      {/* <CounterWithClass /> */}
       <hr />
-      <CounterWithFunction /> */}
+      <CounterWithFunction />
 
-      <Parent />
+      {/* <Parent /> */}
     </div>
   );
 };
