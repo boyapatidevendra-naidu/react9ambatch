@@ -1,12 +1,14 @@
 // import Conditional from "./components/Conditional";
 
-import Parent from "./components/componentRendering/Parent";
+import FilterTheProducts from "./components/componentRendering/FilterTheProducts";
+// import Parent from "./components/componentRendering/Parent";
 
 const App = () => {
   return (
     <div>
       {/* <Conditional /> */}
-      <Parent />
+      {/* <Parent /> */}
+      <FilterTheProducts />
     </div>
   );
 };

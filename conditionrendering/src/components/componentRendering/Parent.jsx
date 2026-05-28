@@ -13,32 +13,7 @@ const Parent = () => {
     }
   };
 
-  let products = [
-    {
-      name: "Shirt",
-      category: "men",
-    },
-    {
-      name: "Jeans",
-      category: "men",
-    },
-    {
-      name: "Kurtha",
-      category: "women",
-    },
-    {
-      name: "Women Shirt",
-      category: "women",
-    },
-    {
-      name: "Kids -Shirt",
-      category: "kids",
-    },
-    {
-      name: "Kids -Jeans",
-      category: "kids",
-    },
-  ];
+
 
   return (
     <div>
@@ -48,9 +23,7 @@ const Parent = () => {
       {/* {!login ? <Loading /> : <Data />} */}
       {rendering()}
 
-      <button>Men</button>
-      <button>Women</button>
-      <button>Kids</button>
+     
 
       {products.map((value) => {
         return (
