@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-const DisaplayVideos = ({ data }) => {
+const DisaplayVideos = ({ data, updateCurrentVideo }) => {
   let videoRef = useRef([]);
 
   let handlePlay = (index) => {
@@ -21,6 +21,8 @@ const DisaplayVideos = ({ data }) => {
                 handlePlay(index);
               }}
               onMouseLeave={() => handlePause(index)}
+              onClick={() => updateCurrentVideo(video)}
+              muted
             ></video>
           </aside>
         );

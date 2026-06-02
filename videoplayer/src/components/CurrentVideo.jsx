@@ -1,9 +1,23 @@
-import React from 'react'
+import  { useRef, useState } from "react";
 
-const CurrentVideo = () => {
+const CurrentVideo = ({ video }) => {
+  let [play, setPlay] = useState(false);
+  let videoRef = useRef();
+  let handlePlay = () => {
+    if (play) {
+      videoRef.current?.pause();
+      setPlay(false);
+    } else {
+      videoRef.current.play();
+      setPlay(true);
+    }
+  };
+
   return (
-    <div>CurrentVideo</div>
-  )
-}
+    <>
+      <video src={video} ref={videoRef} onClick={handlePlay}></video>
+    </>
+  );
+};
 
-export default CurrentVideo
+export default CurrentVideo;
