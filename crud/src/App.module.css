@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+  gap: 20px;
+  padding: 20px;
+}
+.container article {
+  border: solid;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formContainer label {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.formContainer input,
+.formContainer textarea,
+.formContainer button {
+  width: 80%;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.formContainer form {
+  border: solid;
+  height: 80%;
+  width: 80%;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 8px 5px gray;
+}
+
+.formContainer button {
+  margin-top: 20px;
+  background-color: navy;
+  color: white;
+}
+
+.productContainer > div {
+  width: 90%;
+  height: 90vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.productContainer aside {
+  width: 100%;
+  border: solid;
+  height: 200px;
+  margin-top: 10px;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  box-shadow: 5px 8px 5px gray;
+
+  div {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button {
+      padding: 8px 25px;
+      width: 40%;
+      font-size: 20px;
+      font-weight: 500;
+      border-radius: 20px;
+      color: white;
+    }
+  }
+}
