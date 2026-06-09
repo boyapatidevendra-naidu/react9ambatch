@@ -1,6 +1,7 @@
-import React from "react";
+import { useState } from "react";
 
-const DisplayProduct = ({ products }) => {
+const DisplayProduct = ({ products, deleteProduct }) => {
+  // let [productValues, setProductValues] = useState(null);
   let deleteButton = {
     backgroundColor: "red",
   };
@@ -23,6 +24,20 @@ const DisplayProduct = ({ products }) => {
     backgroundColor: "navy",
     color: "white",
   };
+
+  // let deleteProduct = (id) => {
+  //   let filterProducts = products.filter((product) => product.id != id);
+  //   setProductValues(filterProducts);
+  // };
+  // console.log(productValues);
+
+  // let fetchProducts = () => {
+  //   if (productValues === null) {
+  //     return products;
+  //   } else {
+  //     return productValues;
+  //   }
+  // };
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>Products</h1>
@@ -44,7 +59,12 @@ const DisplayProduct = ({ products }) => {
             <p>Product Rating: {product.rating} </p>
             <div>
               <button style={editButton}>Edit</button>
-              <button style={deleteButton}>Delete</button>
+              <button
+                style={deleteButton}
+                onClick={() => deleteProduct(product.id)}
+              >
+                Delete
+              </button>
             </div>
           </aside>
         );

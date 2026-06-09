@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Form = ({ updateProductDetails }) => {
   let [details, setDetails] = useState({
+    id: crypto.randomUUID(),
     productName: "",
     description: "",
     price: "",
@@ -19,12 +20,14 @@ const Form = ({ updateProductDetails }) => {
     e.preventDefault();
     updateProductDetails(details);
     setDetails({
+      id: crypto.randomUUID(),
       productName: "",
       description: "",
       price: "",
       rating: "",
     });
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <aside style={{ textAlign: "center" }}>
