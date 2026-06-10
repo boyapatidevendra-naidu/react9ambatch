@@ -1,33 +1,9 @@
-import React, { useState } from "react";
 
-const Form = ({ updateProductDetails }) => {
-  let [details, setDetails] = useState({
-    id: crypto.randomUUID(),
-    productName: "",
-    description: "",
-    price: "",
-    rating: "",
-  });
 
+const Form = ({ updateProductDetails, details,handleSubmit,handleChange }) => {
+ 
+  
   let { productName, description, price, rating } = details;
-
-  let handleChange = (e) => {
-    let { value, name } = e.target;
-    setDetails({ ...details, [name]: value });
-  };
-
-  let handleSubmit = (e) => {
-    e.preventDefault();
-    updateProductDetails(details);
-    setDetails({
-      id: crypto.randomUUID(),
-      productName: "",
-      description: "",
-      price: "",
-      rating: "",
-    });
-  };
-
   return (
     <form onSubmit={handleSubmit}>
       <aside style={{ textAlign: "center" }}>

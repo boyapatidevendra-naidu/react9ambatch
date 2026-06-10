@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const DisplayProduct = ({ products, deleteProduct }) => {
+const DisplayProduct = ({ products, deleteProduct, editDetails }) => {
   // let [productValues, setProductValues] = useState(null);
   let deleteButton = {
     backgroundColor: "red",
@@ -58,7 +58,14 @@ const DisplayProduct = ({ products, deleteProduct }) => {
             <p>Product Price: {product.price} </p>
             <p>Product Rating: {product.rating} </p>
             <div>
-              <button style={editButton}>Edit</button>
+              <button
+                style={editButton}
+                onClick={() => {
+                  editDetails(product.id);
+                }}
+              >
+                Edit
+              </button>
               <button
                 style={deleteButton}
                 onClick={() => deleteProduct(product.id)}
