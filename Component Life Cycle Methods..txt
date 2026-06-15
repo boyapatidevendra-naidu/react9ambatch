@@ -1,0 +1,79 @@
+Component Life Cycle Methods.
+
+	1. Mounting.
+		
+		1. Constructor
+		2. getDerivedStateFromProps
+		3. render
+		4. componentDidMount
+
+	2. Updating
+		1. getDerivedStateFromProps
+		2. shouldComponentUpdate
+		3. render
+		4. compoentDidUpdate
+
+
+	3. Unmounting
+
+		1. conponentWillUnmount
+
+
+useEffect
+
+
+1. Render Method
+
+	useEffect(function, dependency)
+
+	useEffect(()=>{
+
+		//code
+	})
+
+2. componentDidMount
+
+	useEffect(()=>{
+		//code
+	},[])
+
+3. Update
+
+	useEffect(()=>{
+		//code
+	},[value])
+
+4. Unmount
+
+	useEffect(()=>{
+		return //code
+
+	},[])
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
