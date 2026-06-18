@@ -3,7 +3,7 @@ const Product = ({ data, goto }) => {
     <div>
       <p>{data.title}</p>
       <p>{data.price}</p>
-      <button onClick={goto}>View More</button>
+      <button onClick={() => goto(data.id)}>View More</button>
     </div>
   );
 };

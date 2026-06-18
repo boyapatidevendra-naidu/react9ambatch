@@ -7,8 +7,8 @@ const DisplayProducts = () => {
   let data = useContext(productContext);
   let navigate = useNavigate();
 
-  let goToSingleProduct = () => {
-    navigate("/singleProduct");
+  let goToSingleProduct = (id) => {
+    navigate(`/singleProduct/${id}`);
   };
   return (
     <div>
