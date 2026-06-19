@@ -3,8 +3,11 @@ import "./global.css";
 import App from "./App";
 import { RouterProvider } from "react-router-dom";
 import RouteData from "./routes/RouteData";
+import AuthProvider from "./context/AuthContext";
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={RouteData}>
-    <App />
-  </RouterProvider>,
+  <AuthProvider>
+    <RouterProvider router={RouteData}>
+      <App />
+    </RouterProvider>
+  </AuthProvider>,
 );

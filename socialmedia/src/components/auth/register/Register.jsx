@@ -1,5 +1,7 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import Form from "../Form";
+import { authContext } from "../../../Utilities";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   let [details, setDetails] = useState({
@@ -13,6 +15,7 @@ const Register = () => {
     username: "",
   });
 
+  let { addUser, addResponse } = useContext(authContext);
   let {
     name,
     email,
@@ -93,11 +96,31 @@ const Register = () => {
     ) {
       alert("Fill All The Fields");
     } else if (current_password === confirm_password) {
-      console.log(details);
+      let detailsObject = {
+        name: name,
+        email: email,
+        password: current_password,
+        dob: dob,
+        mobile: mobile,
+        gender: gender,
+        username: username,
+        following: [],
+        followers: [],
+      };
+      addUser(detailsObject);
     } else {
       alert("Password Mismatch");
     }
   };
+  let navigate = useNavigate();
+  let navigatePage = () => {
+    navigate("/login");
+  };
+  useEffect(() => {
+    if (addResponse === 201) {
+      navigatePage();
+    }
+  }, [addResponse]);
   return (
     <article>
       <form action="" onSubmit={handleSubmit}>

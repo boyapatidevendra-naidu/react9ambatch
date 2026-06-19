@@ -1,4 +1,30 @@
 {
-    "users":[],
-    "posts":[]
+  "users": [
+    {
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "password": "123456",
+      "dob": "2026-06-01",
+      "mobile": "1234567890",
+      "gender": "male",
+      "username": "ramkumar",
+      "following": [],
+      "followers": [],
+      "id": "bcW4tTQCgdw"
+    },
+    {
+      "name": "Ravi",
+      "email": "ravi@gmail.com",
+      "password": "123456",
+      "dob": "2026-06-04",
+      "mobile": "1234567890",
+      "gender": "male",
+      "username": "ravikiran",
+      "following": [],
+      "followers": [],
+      "id": "RiFjQvhmqgg"
+    }
+  ],
+  "posts": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }
