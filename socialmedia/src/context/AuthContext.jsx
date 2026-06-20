@@ -3,8 +3,10 @@ import { authContext, baseUrl } from "../Utilities";
 let AuthProvider = ({ children }) => {
   let [data, setData] = useState({
     addResponse: null,
+    loginResponse: null,
+    singleUser: null,
   });
-  let { addResponse } = data;
+  let { addResponse,loginResponse,singleUser } = data;
   let addUser = async (data) => {
     try {
       let response = await fetch(`${baseUrl}/users`, {
@@ -20,8 +22,25 @@ let AuthProvider = ({ children }) => {
       console.log(error);
     }
   };
+
+  let validation = async (email, password) => {
+    try {
+      let response = await fetch(`${baseUrl}/users`);
+      let responseData = await response.json();
+      let filterSingleUser = responseData.find(
+        (user) => user.email === email && user.password === password,
+      );
+      if (filterSingleUser !== undefined) {
+        setData({ ...data, loginResponse: true, singleUser: filterSingleUser });
+      } else {
+        alert("User Not Found");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
-    <authContext.Provider value={{ addUser, addResponse }}>
+    <authContext.Provider value={{ addUser, addResponse,validation,loginResponse,singleUser }}>
       {children}
     </authContext.Provider>
   );
