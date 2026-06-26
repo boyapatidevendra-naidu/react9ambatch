@@ -6,7 +6,7 @@ let AuthProvider = ({ children }) => {
     loginResponse: null,
     singleUser: null,
   });
-  let { addResponse,loginResponse,singleUser } = data;
+  let { addResponse, loginResponse, singleUser } = data;
   let addUser = async (data) => {
     try {
       let response = await fetch(`${baseUrl}/users`, {
@@ -32,6 +32,7 @@ let AuthProvider = ({ children }) => {
       );
       if (filterSingleUser !== undefined) {
         setData({ ...data, loginResponse: true, singleUser: filterSingleUser });
+        localStorage.setItem("id", filterSingleUser.id);
       } else {
         alert("User Not Found");
       }
@@ -39,8 +40,21 @@ let AuthProvider = ({ children }) => {
       console.log(error);
     }
   };
+
+  let logout = () => {
+    setData({ ...data, loginResponse: false });
+  };
   return (
-    <authContext.Provider value={{ addUser, addResponse,validation,loginResponse,singleUser }}>
+    <authContext.Provider
+      value={{
+        addUser,
+        addResponse,
+        validation,
+        loginResponse,
+        singleUser,
+        logout,
+      }}
+    >
       {children}
     </authContext.Provider>
   );
