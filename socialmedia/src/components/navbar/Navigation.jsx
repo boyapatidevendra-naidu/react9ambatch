@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <div>Navigation</div>
-  )
-}
+    <div>
+      <Link to="/addPost">Add Post</Link>
+    </div>
+  );
+};
 
-export default Navigation
+export default Navigation;

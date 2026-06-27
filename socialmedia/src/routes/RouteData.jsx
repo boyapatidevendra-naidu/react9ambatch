@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import Login from "../components/auth/login/Login";
 import Register from "../components/auth/register/Register";
 import HomePage from "../components/homepage/HomePage";
+import AddPost from "../components/posts/AddPost";
 
 let RouteData = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ let RouteData = createBrowserRouter([
       {
         path: "register",
         element: <Register />,
+      },
+      {
+        path: "/addPost",
+        element: <AddPost />,
       },
     ],
   },
