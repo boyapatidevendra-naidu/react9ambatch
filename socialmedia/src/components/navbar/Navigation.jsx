@@ -1,12 +1,11 @@
-import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { authContext } from "../../Utilities";
 
 const Navigation = () => {
-  return (
-    <div>
-      <Link to="/addPost">Add Post</Link>
-    </div>
-  );
+  let { userId } = useContext(authContext);
+
+  return <div>{userId && <Link to="/addPost">Add Post</Link>}</div>;
 };
 
 export default Navigation;

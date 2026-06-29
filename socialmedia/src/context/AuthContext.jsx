@@ -6,6 +6,8 @@ let AuthProvider = ({ children }) => {
     loginResponse: null,
     singleUser: null,
   });
+
+  let userId = localStorage.getItem("id");
   let { addResponse, loginResponse, singleUser } = data;
   let addUser = async (data) => {
     try {
@@ -53,6 +55,7 @@ let AuthProvider = ({ children }) => {
         loginResponse,
         singleUser,
         logout,
+        userId
       }}
     >
       {children}

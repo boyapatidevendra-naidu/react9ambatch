@@ -1,0 +1,38 @@
+.mainContainer {
+  padding: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.postContainer {
+  height: 500px;
+  width: 500px;
+  border-radius: 20px;
+  padding: 20px;
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  img {
+    height: 90%;
+    width: 100%;
+  }
+}
+
+.postContainer figure {
+  flex-basis: 80%;
+  /* border: solid; */
+  width: 100%;
+  height: 100%;
+}
+.postContainer div {
+  flex-basis: 20%;
+  width: 100%;
+  /* border: solid; */
+  span {
+    font-size: 32px;
+    margin-left: 10px;
+  }
+}

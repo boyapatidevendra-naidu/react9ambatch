@@ -7,13 +7,12 @@ const Profile = () => {
   let navigateToLogin = () => {
     navigate("/login");
   };
-  let { logout } = useContext(authContext);
+  let { logout, userId } = useContext(authContext);
   let handleLogout = () => {
     localStorage.removeItem("id");
     logout();
   };
 
-  let userId = localStorage.getItem("id");
   return (
     <>
       {userId ? (
